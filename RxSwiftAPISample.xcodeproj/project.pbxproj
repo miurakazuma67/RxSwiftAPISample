@@ -9,13 +9,19 @@
 /* Begin PBXBuildFile section */
 		A4D303F828729629006DBDA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D303F728729629006DBDA8 /* AppDelegate.swift */; };
 		A4D303FA28729629006DBDA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D303F928729629006DBDA8 /* SceneDelegate.swift */; };
-		A4D303FC28729629006DBDA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D303FB28729629006DBDA8 /* ViewController.swift */; };
-		A4D303FF28729629006DBDA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D303FD28729629006DBDA8 /* Main.storyboard */; };
+		A4D303FC28729629006DBDA8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D303FB28729629006DBDA8 /* LoginViewController.swift */; };
+		A4D303FF28729629006DBDA8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D303FD28729629006DBDA8 /* Login.storyboard */; };
 		A4D304012872962E006DBDA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D304002872962E006DBDA8 /* Assets.xcassets */; };
 		A4D304042872962E006DBDA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D304022872962E006DBDA8 /* LaunchScreen.storyboard */; };
 		A4D3040F2872962F006DBDA8 /* RxSwiftAPISampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3040E2872962F006DBDA8 /* RxSwiftAPISampleTests.swift */; };
 		A4D304192872962F006DBDA8 /* RxSwiftAPISampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D304182872962F006DBDA8 /* RxSwiftAPISampleUITests.swift */; };
 		A4D3041B2872962F006DBDA8 /* RxSwiftAPISampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3041A2872962F006DBDA8 /* RxSwiftAPISampleUITestsLaunchTests.swift */; };
+		A4D3043028758DF5006DBDA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4D3042F28758DF5006DBDA8 /* GoogleService-Info.plist */; };
+		A4D304372876B47E006DBDA8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D304362876B47E006DBDA8 /* RegisterViewController.swift */; };
+		A4D304392876B491006DBDA8 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D304382876B491006DBDA8 /* Register.storyboard */; };
+		A4D3043B2876B5DD006DBDA8 /* ResisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3043A2876B5DD006DBDA8 /* ResisterViewModel.swift */; };
+		A4D3043D2876B5EF006DBDA8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3043C2876B5EF006DBDA8 /* LoginViewModel.swift */; };
+		A4D304402876B6A4006DBDA8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3043F2876B6A4006DBDA8 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +45,8 @@
 		A4D303F428729629006DBDA8 /* RxSwiftAPISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftAPISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D303F728729629006DBDA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4D303F928729629006DBDA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A4D303FB28729629006DBDA8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A4D303FE28729629006DBDA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A4D303FB28729629006DBDA8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A4D303FE28729629006DBDA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		A4D304002872962E006DBDA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4D304032872962E006DBDA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4D304052872962E006DBDA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +55,12 @@
 		A4D304142872962F006DBDA8 /* RxSwiftAPISampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSwiftAPISampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D304182872962F006DBDA8 /* RxSwiftAPISampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftAPISampleUITests.swift; sourceTree = "<group>"; };
 		A4D3041A2872962F006DBDA8 /* RxSwiftAPISampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftAPISampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A4D3042F28758DF5006DBDA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A4D304362876B47E006DBDA8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A4D304382876B491006DBDA8 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		A4D3043A2876B5DD006DBDA8 /* ResisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResisterViewModel.swift; sourceTree = "<group>"; };
+		A4D3043C2876B5EF006DBDA8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A4D3043F2876B6A4006DBDA8 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +113,13 @@
 			children = (
 				A4D303F728729629006DBDA8 /* AppDelegate.swift */,
 				A4D303F928729629006DBDA8 /* SceneDelegate.swift */,
-				A4D303FB28729629006DBDA8 /* ViewController.swift */,
-				A4D303FD28729629006DBDA8 /* Main.storyboard */,
+				A4D304322876B3AB006DBDA8 /* Login */,
+				A4D304332876B3DA006DBDA8 /* Register */,
+				A4D3043E2876B63E006DBDA8 /* Utility */,
 				A4D304002872962E006DBDA8 /* Assets.xcassets */,
 				A4D304022872962E006DBDA8 /* LaunchScreen.storyboard */,
 				A4D304052872962E006DBDA8 /* Info.plist */,
+				A4D3042F28758DF5006DBDA8 /* GoogleService-Info.plist */,
 			);
 			path = RxSwiftAPISample;
 			sourceTree = "<group>";
@@ -125,6 +139,34 @@
 				A4D3041A2872962F006DBDA8 /* RxSwiftAPISampleUITestsLaunchTests.swift */,
 			);
 			path = RxSwiftAPISampleUITests;
+			sourceTree = "<group>";
+		};
+		A4D304322876B3AB006DBDA8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A4D303FB28729629006DBDA8 /* LoginViewController.swift */,
+				A4D3043C2876B5EF006DBDA8 /* LoginViewModel.swift */,
+				A4D303FD28729629006DBDA8 /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A4D304332876B3DA006DBDA8 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				A4D304362876B47E006DBDA8 /* RegisterViewController.swift */,
+				A4D3043A2876B5DD006DBDA8 /* ResisterViewModel.swift */,
+				A4D304382876B491006DBDA8 /* Register.storyboard */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		A4D3043E2876B63E006DBDA8 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A4D3043F2876B6A4006DBDA8 /* Router.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +257,9 @@
 				Base,
 			);
 			mainGroup = A4D303EB28729629006DBDA8;
+			packageReferences = (
+				A4D3043128758F32006DBDA8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = A4D303F528729629006DBDA8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,8 +277,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4D304042872962E006DBDA8 /* LaunchScreen.storyboard in Resources */,
+				A4D3043028758DF5006DBDA8 /* GoogleService-Info.plist in Resources */,
 				A4D304012872962E006DBDA8 /* Assets.xcassets in Resources */,
-				A4D303FF28729629006DBDA8 /* Main.storyboard in Resources */,
+				A4D303FF28729629006DBDA8 /* Login.storyboard in Resources */,
+				A4D304392876B491006DBDA8 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +305,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4D303FC28729629006DBDA8 /* ViewController.swift in Sources */,
+				A4D303FC28729629006DBDA8 /* LoginViewController.swift in Sources */,
 				A4D303F828729629006DBDA8 /* AppDelegate.swift in Sources */,
+				A4D3043D2876B5EF006DBDA8 /* LoginViewModel.swift in Sources */,
+				A4D304402876B6A4006DBDA8 /* Router.swift in Sources */,
+				A4D3043B2876B5DD006DBDA8 /* ResisterViewModel.swift in Sources */,
 				A4D303FA28729629006DBDA8 /* SceneDelegate.swift in Sources */,
+				A4D304372876B47E006DBDA8 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,12 +348,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A4D303FD28729629006DBDA8 /* Main.storyboard */ = {
+		A4D303FD28729629006DBDA8 /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A4D303FE28729629006DBDA8 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 		A4D304022872962E006DBDA8 /* LaunchScreen.storyboard */ = {
@@ -444,7 +495,7 @@
 				INFOPLIST_FILE = RxSwiftAPISample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Login;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,7 +523,7 @@
 				INFOPLIST_FILE = RxSwiftAPISample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Login;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -604,6 +655,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A4D3043128758F32006DBDA8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = A4D303EC28729629006DBDA8 /* Project object */;
 }
