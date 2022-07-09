@@ -22,6 +22,12 @@
 		A4D3043B2876B5DD006DBDA8 /* ResisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3043A2876B5DD006DBDA8 /* ResisterViewModel.swift */; };
 		A4D3043D2876B5EF006DBDA8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3043C2876B5EF006DBDA8 /* LoginViewModel.swift */; };
 		A4D304402876B6A4006DBDA8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3043F2876B6A4006DBDA8 /* Router.swift */; };
+		A4D304432876F0E6006DBDA8 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A4D304422876F0E6006DBDA8 /* RxCocoa */; };
+		A4D304452876F0E6006DBDA8 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A4D304442876F0E6006DBDA8 /* RxRelay */; };
+		A4D3044728780A53006DBDA8 /* ValidationText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3044628780A52006DBDA8 /* ValidationText.swift */; };
+		A4D3044928791FAB006DBDA8 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3044828791FAB006DBDA8 /* String+.swift */; };
+		A4D3044C28792F26006DBDA8 /* RxOptional in Frameworks */ = {isa = PBXBuildFile; productRef = A4D3044B28792F26006DBDA8 /* RxOptional */; };
+		A4D3044E2879331D006DBDA8 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3044D2879331D006DBDA8 /* UILabel+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +67,9 @@
 		A4D3043A2876B5DD006DBDA8 /* ResisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResisterViewModel.swift; sourceTree = "<group>"; };
 		A4D3043C2876B5EF006DBDA8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A4D3043F2876B6A4006DBDA8 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		A4D3044628780A52006DBDA8 /* ValidationText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationText.swift; sourceTree = "<group>"; };
+		A4D3044828791FAB006DBDA8 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		A4D3044D2879331D006DBDA8 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D304452876F0E6006DBDA8 /* RxRelay in Frameworks */,
+				A4D304432876F0E6006DBDA8 /* RxCocoa in Frameworks */,
+				A4D3044C28792F26006DBDA8 /* RxOptional in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,13 +123,13 @@
 		A4D303F628729629006DBDA8 /* RxSwiftAPISample */ = {
 			isa = PBXGroup;
 			children = (
-				A4D303F728729629006DBDA8 /* AppDelegate.swift */,
-				A4D303F928729629006DBDA8 /* SceneDelegate.swift */,
 				A4D304322876B3AB006DBDA8 /* Login */,
 				A4D304332876B3DA006DBDA8 /* Register */,
 				A4D3043E2876B63E006DBDA8 /* Utility */,
 				A4D304002872962E006DBDA8 /* Assets.xcassets */,
 				A4D304022872962E006DBDA8 /* LaunchScreen.storyboard */,
+				A4D303F728729629006DBDA8 /* AppDelegate.swift */,
+				A4D303F928729629006DBDA8 /* SceneDelegate.swift */,
 				A4D304052872962E006DBDA8 /* Info.plist */,
 				A4D3042F28758DF5006DBDA8 /* GoogleService-Info.plist */,
 			);
@@ -146,6 +158,9 @@
 			children = (
 				A4D303FB28729629006DBDA8 /* LoginViewController.swift */,
 				A4D3043C2876B5EF006DBDA8 /* LoginViewModel.swift */,
+				A4D3044628780A52006DBDA8 /* ValidationText.swift */,
+				A4D3044828791FAB006DBDA8 /* String+.swift */,
+				A4D3044D2879331D006DBDA8 /* UILabel+.swift */,
 				A4D303FD28729629006DBDA8 /* Login.storyboard */,
 			);
 			path = Login;
@@ -185,6 +200,11 @@
 			dependencies = (
 			);
 			name = RxSwiftAPISample;
+			packageProductDependencies = (
+				A4D304422876F0E6006DBDA8 /* RxCocoa */,
+				A4D304442876F0E6006DBDA8 /* RxRelay */,
+				A4D3044B28792F26006DBDA8 /* RxOptional */,
+			);
 			productName = RxSwiftAPISample;
 			productReference = A4D303F428729629006DBDA8 /* RxSwiftAPISample.app */;
 			productType = "com.apple.product-type.application";
@@ -259,6 +279,8 @@
 			mainGroup = A4D303EB28729629006DBDA8;
 			packageReferences = (
 				A4D3043128758F32006DBDA8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A4D304412876F0E6006DBDA8 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				A4D3044A28792F25006DBDA8 /* XCRemoteSwiftPackageReference "RxOptional" */,
 			);
 			productRefGroup = A4D303F528729629006DBDA8 /* Products */;
 			projectDirPath = "";
@@ -306,12 +328,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4D303FC28729629006DBDA8 /* LoginViewController.swift in Sources */,
+				A4D3044928791FAB006DBDA8 /* String+.swift in Sources */,
+				A4D3044E2879331D006DBDA8 /* UILabel+.swift in Sources */,
 				A4D303F828729629006DBDA8 /* AppDelegate.swift in Sources */,
 				A4D3043D2876B5EF006DBDA8 /* LoginViewModel.swift in Sources */,
 				A4D304402876B6A4006DBDA8 /* Router.swift in Sources */,
 				A4D3043B2876B5DD006DBDA8 /* ResisterViewModel.swift in Sources */,
 				A4D303FA28729629006DBDA8 /* SceneDelegate.swift in Sources */,
 				A4D304372876B47E006DBDA8 /* RegisterViewController.swift in Sources */,
+				A4D3044728780A53006DBDA8 /* ValidationText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,7 +690,41 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		A4D304412876F0E6006DBDA8 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		A4D3044A28792F25006DBDA8 /* XCRemoteSwiftPackageReference "RxOptional" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxOptional";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A4D304422876F0E6006DBDA8 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A4D304412876F0E6006DBDA8 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		A4D304442876F0E6006DBDA8 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A4D304412876F0E6006DBDA8 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		A4D3044B28792F26006DBDA8 /* RxOptional */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A4D3044A28792F25006DBDA8 /* XCRemoteSwiftPackageReference "RxOptional" */;
+			productName = RxOptional;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A4D303EC28729629006DBDA8 /* Project object */;
 }
