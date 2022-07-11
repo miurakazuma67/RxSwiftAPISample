@@ -53,8 +53,8 @@ final class LoginViewModel: LoginViewModelInput, LoginViewModelOutput {
         _addressObserver
             .debounce(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
-            .flatMapLatest{ id -> Observable<ValidationText> in
-                Validation.shared.validate(address: id)
+            .flatMapLatest{ address -> Observable<ValidationText> in
+                Validation.shared.validate(address: address)
             }.bind(to: _addressValidation).disposed(by: disposeBag)
 
         _passwordObserver
@@ -64,7 +64,7 @@ final class LoginViewModel: LoginViewModelInput, LoginViewModelOutput {
                 Validation.shared.validate(password: password)
             }.bind(to: _passwordValidation).disposed(by: disposeBag)
 
-        loginValidation = Driver.combineLatest(addressValidation, passwordValidation){ address, password in
+        loginValidation = Driver.combineLatest(addressValidation, passwordValidation) { address, password in
             return address.isValid && password.isValid
         }
     }

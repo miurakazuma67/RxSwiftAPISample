@@ -35,12 +35,14 @@ final class Validation {
         if address.isEmpty{
             return Observable.just(.empty)
         //文字数が5文字未満だった場合
-//        } else if address.count < 5{
-//            return Observable.just(.failed(message: "メールアドレスの文字数が正しくありません"))
+        }
+        if address.count < 5{
+            return Observable.just(.failed(message: "メールアドレスの文字数が正しくありません"))
         //文字列に半角英数以外が入っている場合
-        } else if !address.isAlphanumeric(){
+        }
+        if !address.validateEmail() {
             return Observable.just(.failed(message: "メールアドレスが正しくありません"))
-        }else{
+        } else {
             return Observable.just(.ok(message: "OK"))
         }
     }
