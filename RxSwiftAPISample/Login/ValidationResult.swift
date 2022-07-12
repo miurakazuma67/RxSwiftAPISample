@@ -1,5 +1,5 @@
 //
-//  ValidationText.swift
+//  ValidationResult.swift
 //  RxSwiftAPISample
 //
 //  Created by 三浦　一真 on 2022/07/08.
@@ -9,13 +9,13 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-enum ValidationText {
+enum ValidationResult {
     case ok(message: String)
     case empty
     case failed(message: String)
 }
 
-extension ValidationText {
+extension ValidationResult {
 
     var isValid: Bool {
         switch self{
@@ -30,16 +30,16 @@ final class Validation {
     private init() {}
     static let shared = Validation()
 
-    func validate(address: String) -> Observable<ValidationText> {
+    func validate(address: String) -> Observable<ValidationResult> {
 
         if address.isEmpty{
             return Observable.just(.empty)
-        //文字数が5文字未満だった場合
         }
+
         if address.count < 5{
             return Observable.just(.failed(message: "メールアドレスの文字数が正しくありません"))
-        //文字列に半角英数以外が入っている場合
         }
+
         if !address.validateEmail() {
             return Observable.just(.failed(message: "メールアドレスが正しくありません"))
         } else {
@@ -47,17 +47,33 @@ final class Validation {
         }
     }
 
-    func validate(password: String) -> Observable<ValidationText> {
+    func validate(password: String) -> Observable<ValidationResult> {
         if password.isEmpty{
             return Observable.just(.empty)
-        //文字数が8文字未満だった場合
-        } else if password.count < 8 {
+        }
+
+        if password.count < 8 {
             return Observable.just(.failed(message: "8文字以上入力してください"))
-        //文字列が正しくない場合（半角英数以外が入っている）
-        } else if !password.isAlphanumeric() {
+        }
+
+        if !password.isAlphanumeric() {
             return Observable.just(.failed(message: "半角英数以外を入力しないでください"))
         } else {
             return Observable.just(.ok(message: "OK"))
+        }
+    }
+
+    //パスワード(確認用)に使うメソッド
+    func validateRepeatedPassword(_ password: String, repeatedPassword: String) -> Observable<ValidationResult> {
+        if repeatedPassword.isEmpty{
+            return Observable.just(.empty)
+        }
+
+        if repeatedPassword == password {
+            return Observable.just(.ok(message: "OK"))
+        }
+        else {
+            return Observable.just(.failed(message: "パスワードが一致しません"))
         }
     }
 }

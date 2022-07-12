@@ -19,12 +19,12 @@
 		A4D3043028758DF5006DBDA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4D3042F28758DF5006DBDA8 /* GoogleService-Info.plist */; };
 		A4D304372876B47E006DBDA8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D304362876B47E006DBDA8 /* RegisterViewController.swift */; };
 		A4D304392876B491006DBDA8 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D304382876B491006DBDA8 /* Register.storyboard */; };
-		A4D3043B2876B5DD006DBDA8 /* ResisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3043A2876B5DD006DBDA8 /* ResisterViewModel.swift */; };
+		A4D3043B2876B5DD006DBDA8 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3043A2876B5DD006DBDA8 /* RegisterViewModel.swift */; };
 		A4D3043D2876B5EF006DBDA8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3043C2876B5EF006DBDA8 /* LoginViewModel.swift */; };
 		A4D304402876B6A4006DBDA8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3043F2876B6A4006DBDA8 /* Router.swift */; };
 		A4D304432876F0E6006DBDA8 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A4D304422876F0E6006DBDA8 /* RxCocoa */; };
 		A4D304452876F0E6006DBDA8 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A4D304442876F0E6006DBDA8 /* RxRelay */; };
-		A4D3044728780A53006DBDA8 /* ValidationText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3044628780A52006DBDA8 /* ValidationText.swift */; };
+		A4D3044728780A53006DBDA8 /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3044628780A52006DBDA8 /* ValidationResult.swift */; };
 		A4D3044928791FAB006DBDA8 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3044828791FAB006DBDA8 /* String+.swift */; };
 		A4D3044C28792F26006DBDA8 /* RxOptional in Frameworks */ = {isa = PBXBuildFile; productRef = A4D3044B28792F26006DBDA8 /* RxOptional */; };
 		A4D3044E2879331D006DBDA8 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3044D2879331D006DBDA8 /* UILabel+.swift */; };
@@ -64,10 +64,10 @@
 		A4D3042F28758DF5006DBDA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A4D304362876B47E006DBDA8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A4D304382876B491006DBDA8 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
-		A4D3043A2876B5DD006DBDA8 /* ResisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResisterViewModel.swift; sourceTree = "<group>"; };
+		A4D3043A2876B5DD006DBDA8 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		A4D3043C2876B5EF006DBDA8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A4D3043F2876B6A4006DBDA8 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		A4D3044628780A52006DBDA8 /* ValidationText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationText.swift; sourceTree = "<group>"; };
+		A4D3044628780A52006DBDA8 /* ValidationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationResult.swift; sourceTree = "<group>"; };
 		A4D3044828791FAB006DBDA8 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		A4D3044D2879331D006DBDA8 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A41189E0287C2B0A00E804B0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A4D3044828791FAB006DBDA8 /* String+.swift */,
+				A4D3044D2879331D006DBDA8 /* UILabel+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		A4D303EB28729629006DBDA8 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +132,7 @@
 		A4D303F628729629006DBDA8 /* RxSwiftAPISample */ = {
 			isa = PBXGroup;
 			children = (
+				A41189E0287C2B0A00E804B0 /* Extensions */,
 				A4D304322876B3AB006DBDA8 /* Login */,
 				A4D304332876B3DA006DBDA8 /* Register */,
 				A4D3043E2876B63E006DBDA8 /* Utility */,
@@ -158,9 +168,7 @@
 			children = (
 				A4D303FB28729629006DBDA8 /* LoginViewController.swift */,
 				A4D3043C2876B5EF006DBDA8 /* LoginViewModel.swift */,
-				A4D3044628780A52006DBDA8 /* ValidationText.swift */,
-				A4D3044828791FAB006DBDA8 /* String+.swift */,
-				A4D3044D2879331D006DBDA8 /* UILabel+.swift */,
+				A4D3044628780A52006DBDA8 /* ValidationResult.swift */,
 				A4D303FD28729629006DBDA8 /* Login.storyboard */,
 			);
 			path = Login;
@@ -170,7 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				A4D304362876B47E006DBDA8 /* RegisterViewController.swift */,
-				A4D3043A2876B5DD006DBDA8 /* ResisterViewModel.swift */,
+				A4D3043A2876B5DD006DBDA8 /* RegisterViewModel.swift */,
 				A4D304382876B491006DBDA8 /* Register.storyboard */,
 			);
 			path = Register;
@@ -333,10 +341,10 @@
 				A4D303F828729629006DBDA8 /* AppDelegate.swift in Sources */,
 				A4D3043D2876B5EF006DBDA8 /* LoginViewModel.swift in Sources */,
 				A4D304402876B6A4006DBDA8 /* Router.swift in Sources */,
-				A4D3043B2876B5DD006DBDA8 /* ResisterViewModel.swift in Sources */,
+				A4D3043B2876B5DD006DBDA8 /* RegisterViewModel.swift in Sources */,
 				A4D303FA28729629006DBDA8 /* SceneDelegate.swift in Sources */,
 				A4D304372876B47E006DBDA8 /* RegisterViewController.swift in Sources */,
-				A4D3044728780A53006DBDA8 /* ValidationText.swift in Sources */,
+				A4D3044728780A53006DBDA8 /* ValidationResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

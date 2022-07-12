@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import UIKit
 
-extension ValidationText {
+extension ValidationResult {
     var textColor: UIColor{
         switch self{
         case .ok:
@@ -34,7 +34,7 @@ extension ValidationText {
 }
 
 extension Reactive where Base: UILabel {
-    var validationText: Binder<ValidationText> {
+    var validationResult: Binder<ValidationResult> {
         return Binder(base) { label, result in
             label.text = result.description
             label.textColor = result.textColor

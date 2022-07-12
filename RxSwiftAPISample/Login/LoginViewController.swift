@@ -35,9 +35,9 @@ final class LoginViewController: UIViewController {
             .bind(to: input.passwordObserver).disposed(by: disposeBag)
 
         output.addressValidation
-            .drive(addressValidationLabel.rx.validationText).disposed(by: disposeBag)
+            .drive(addressValidationLabel.rx.validationResult).disposed(by: disposeBag)
         output.passwordValidation
-            .drive(passwordValidationLabel.rx.validationText).disposed(by: disposeBag)
+            .drive(passwordValidationLabel.rx.validationResult).disposed(by: disposeBag)
         output.loginValidation
             .drive(loginButton.rx.isEnabled).disposed(by: disposeBag)
     }
