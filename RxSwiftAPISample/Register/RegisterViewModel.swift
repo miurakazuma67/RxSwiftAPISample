@@ -9,25 +9,26 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-protocol RegisterViewModelInput {
-    // メールアドレス 外部から入力を受け取るのでObserver
-    var addressObserver: AnyObserver<String> { get }
-    // パスワード
-    var passwordObserver: AnyObserver<String> { get }
-    // パスワード(確認用)
-    var repeatedPasswordObserver: AnyObserver<String> { get }
-}
+// initで受けとったObservableを処理して出力に変換
+// API用のロジックなどをイニシャライザなどで外部から用意できるようにする
 
-protocol RegisterViewModelOutput {
-    var addressValidation: Driver<ValidationResult> { get }
-    var passwordValidation: Driver<ValidationResult> { get }
-    var repeatedPasswordValidation: Driver<ValidationResult> { get }
-    var registerValidation: Driver<Bool> { get }
-}
-
-final class RegisterViewModel: RegisterViewModelInput, RegisterViewModelOutput {
+final class RegisterViewModel {
+    // output
+    var addressValidation: Driver<ValidationResult>
+    var passwordValidation: Driver<ValidationResult>
+    var repeatedPasswordValidation: Driver<ValidationResult>
+    var registerValidation: Driver<Bool>
 
     private let disposeBag = DisposeBag()
+
+    init(input: (
+        address: Observable<String>,
+        password: Observable<String>,
+        repeatedPassword: Observable<String>
+    )
+    ) {
+        // ここでaddress, password, repeatedPasswordに値を流す
+    }
 
     /*Input*/
     private let _addressObserver = BehaviorRelay<String>(value: "")
@@ -37,9 +38,8 @@ final class RegisterViewModel: RegisterViewModelInput, RegisterViewModelOutput {
     }
 
     private let _passwordObserver = BehaviorRelay<String>(value: "")
-    lazy var passwordObserver: AnyObserver<String> = .init { [weak self] event in
-        guard let element = event.element else { return }
-        self?._passwordObserver.accept(element)
+    var passwordObserver: Driver<String> {
+        _passwordObserver.asDriver()
     }
 
     private let _repeatedPasswordObserver = BehaviorRelay<String>(value: "")
@@ -77,13 +77,14 @@ final class RegisterViewModel: RegisterViewModelInput, RegisterViewModelOutput {
                 Validation.shared.validate(password: password)
             }.bind(to: _passwordValidation).disposed(by: disposeBag)
 
-        //ここはrepeated用のfunc使うはず
+        //ここはrepeated用のfunc使う, combineLatest使いたい
+        // flatMapLatestは使えないので他でやる
         _repeatedPasswordObserver
             .debounce(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
-            .flatMapLatest { password, repeatedPassword -> Observable<ValidationResult> in
-                Validation.shared.validate(password: repeatedPassword)
-            }.bind(to: _passwordValidation).disposed(by: disposeBag)
+            .combineLatest(passwordObserver, repeatedPasswordObserver) { password, repeatedPassword in
+                Validation.shared.validateRepeatedPassword(password: password, repeatedPassword: repeatedPassword)
+            }.bind(to: _repeatedPasswordValidation).disposed(by: disposeBag)
 
         registerValidation = Driver.combineLatest(addressValidation, passwordValidation) { address, password in
             return address.isValid && password.isValid

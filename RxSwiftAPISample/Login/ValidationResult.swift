@@ -64,7 +64,7 @@ final class Validation {
     }
 
     //パスワード(確認用)に使うメソッド
-    func validateRepeatedPassword(_ password: String, repeatedPassword: String) -> Observable<ValidationResult> {
+    func validateRepeatedPassword(password: String, repeatedPassword: String) -> Observable<ValidationResult> {
         if repeatedPassword.isEmpty{
             return Observable.just(.empty)
         }
