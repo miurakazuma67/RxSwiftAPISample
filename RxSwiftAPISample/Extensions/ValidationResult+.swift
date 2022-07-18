@@ -16,6 +16,8 @@ extension ValidationResult {
             return UIColor.systemGreen
         case .empty:
             return UIColor.black
+        case .validating:
+            return UIColor.black
         case .failed:
             return UIColor.red
         }
@@ -25,7 +27,9 @@ extension ValidationResult {
         switch self{
         case .ok(let message):
             return message
-        case .empty:
+        case .empty(let message):
+            return message
+        case .validating:
             return ""
         case .failed(let message):
             return message

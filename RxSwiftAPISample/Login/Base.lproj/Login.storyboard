@@ -26,7 +26,7 @@
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2S-0U-Ne2">
                                         <rect key="frame" x="0.0" y="64" width="200" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -37,7 +37,7 @@
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdt-0K-lOu">
                                         <rect key="frame" x="0.0" y="158" width="200" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -71,9 +71,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addressTextField" destination="owm-sJ-luE" id="x0Q-cf-29c"/>
-                        <outlet property="addressValidationLabel" destination="A2S-0U-Ne2" id="YV0-3U-QmT"/>
                         <outlet property="loginButton" destination="81o-aL-sIW" id="9U5-ob-h0H"/>
+                        <outlet property="mailTextField" destination="owm-sJ-luE" id="x0Q-cf-29c"/>
+                        <outlet property="mailValidationLabel" destination="A2S-0U-Ne2" id="YV0-3U-QmT"/>
                         <outlet property="passwordTextField" destination="z14-6o-y0z" id="ELz-15-AbN"/>
                         <outlet property="passwordValidationLabel" destination="Tdt-0K-lOu" id="G3A-M5-MwX"/>
                         <outlet property="registerButton" destination="25h-ps-apT" id="2a8-j5-o79"/>

@@ -20,12 +20,27 @@ final class Router {
 
     private var window: UIWindow?
 
-    func showRegister(from: UIViewController) {
-        let vc = RegisterViewController.makeFromStoryboard()
+    func showSignIn(from: UIViewController) {
+        let vc = SignUpViewController.makeFromStoryboard()
         show(from: from, to: vc)
     }
 
-    private func show(from: UIViewController, to: UIViewController, completion:(() -> Void)? = nil){
+    func showBase(from: UIViewController) {
+        let vc = BaseViewController.makeFromStoryboard()
+        show(from: from, to: vc)
+    }
+
+    func showChat(from: UIViewController) {
+        let vc = ChatViewController.makeFromStoryboard()
+        show(from: from, to: vc)
+    }
+
+    func showTimer(from: UIViewController) {
+        let vc = TimerViewController.makeFromStoryboard()
+        show(from: from, to: vc)
+    }
+
+    private func show(from: UIViewController, to: UIViewController, completion:(() -> Void)? = nil) {
         if let nav = from.navigationController {
             nav.pushViewController(to, animated: true)
             completion?()
