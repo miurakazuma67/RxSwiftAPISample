@@ -29,29 +29,29 @@ final class SignUpViewModel {
         passwordConfirm: Driver<String>,
         signUpTaps: Signal<()>
         ),
-         signUpAPI: SignUpAPI
+         signUpAPI: SignUpRepositoryProtocol
         ) {
 
-        let signinValidator = SignUpValidator()
+        let signUpValidator = SignUpValidator()
 
         emailValidation = input.email
             .map { email in
-                signinValidator.validateEmail(email)
+                signUpValidator.validateEmail(email)
         }
 
         usernameValidation = input.username
             .map { username in
-                signinValidator.validateUsername(username)
+                signUpValidator.validateUsername(username)
             }
 
         passwordValidation = input.password
             .map { password in
-                signinValidator.validatePassword(password)
+                signUpValidator.validatePassword(password)
             }
 
         passwordConfirmValidation = Driver.combineLatest(input.password, input.passwordConfirm)
             .map { password, passwordConfirm in
-                signinValidator.validatePasswordConfirm(password, passwordConfirm)
+                signUpValidator.validatePasswordConfirm(password, passwordConfirm)
         }
 
         let emailAndPassword = Driver.combineLatest(input.email, input.password, input.username) { (email: $0, password: $1, username:$2) }
@@ -89,7 +89,6 @@ final class SignUpViewModel {
                 password.isValid && passwordConfirm.isValid && !signingUp
         }
             .distinctUntilChanged()
-
     }
 }
 

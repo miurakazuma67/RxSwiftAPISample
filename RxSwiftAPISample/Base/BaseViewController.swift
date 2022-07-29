@@ -8,12 +8,15 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import FirebaseAuth
 
 final class BaseViewController: UIViewController {
 
-    @IBOutlet private weak var moveToChatButton: UIButton!
+    @IBOutlet private weak var moveToReportListButton: UIButton!
+
     @IBOutlet private weak var moveToTimerButton: UIButton!
 
+    @IBOutlet private weak var moveToPostButton: UIButton!
     private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
@@ -22,11 +25,19 @@ final class BaseViewController: UIViewController {
     }
 
     private func setupBinding() {
+        // サインイン画面に戻りたくないので非表示にする
+        self.navigationItem.hidesBackButton = true
         //画面遷移
-        moveToChatButton.rx.tap
+        moveToReportListButton.rx.tap
             .asSignal()
             .emit (onNext: { _ in
-                Router.shared.showChat(from: self)
+                Router.shared.showReportList(from: self)
+            }).disposed(by: disposeBag)
+
+        moveToPostButton.rx.tap
+            .asSignal()
+            .emit (onNext: { _ in
+                Router.shared.showPost(from: self)
             }).disposed(by: disposeBag)
 
         moveToTimerButton.rx.tap
@@ -34,6 +45,13 @@ final class BaseViewController: UIViewController {
             .emit(onNext: {_ in
                 Router.shared.showTimer(from: self)
             }).disposed(by: disposeBag)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser == nil {
+            Router.shared.showSignUp(from: self)
+        }
     }
 
     static func makeFromStoryboard() -> BaseViewController {

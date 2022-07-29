@@ -8,6 +8,6 @@
 import Foundation
 import Firebase
 
-class CurrentUser {
+final class CurrentUser {
     static let share:CurrentUser = CurrentUser()
 }

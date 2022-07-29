@@ -8,9 +8,9 @@
 import Foundation
 import RxSwift
 
-class SignUpValidator {
+final class SignUpValidator {
     let minPasswordCount = 8
-    let minUsernameCount = 5
+    let minUsernameCount = 3
 
     func validateEmail(_ email: String) -> ValidationResult {
         let numberOfCharacters = email.count
@@ -18,7 +18,7 @@ class SignUpValidator {
             return .empty(message: "")
         }
         if !email.contains("@") {
-            return .failed(message: "Invalid email format")
+            return .failed(message: "メールアドレスが正しくありません")
         }
         return .ok(message: "ok")
     }
@@ -29,7 +29,7 @@ class SignUpValidator {
             return .empty(message: "")
         }
         if numberOfCharacters < minUsernameCount {
-            return .failed(message: "Email must be at least \(minUsernameCount) characters")
+            return .failed(message: "メールアドレスは\(minUsernameCount)文字以上入力してください")
         }
         return .ok(message: "ok")
     }
@@ -40,7 +40,7 @@ class SignUpValidator {
             return .empty(message: "")
         }
         if numberOfCharacters < minPasswordCount {
-            return .failed(message: "Password must be at least \(minPasswordCount) characters")
+            return .failed(message: "パスワードは\(minPasswordCount)文字以上入力してください")
         }
         return .ok(message: "ok")
     }
@@ -52,7 +52,7 @@ class SignUpValidator {
         }
 
         if password != passwordConfirm {
-            return .failed(message: "Password and confirm are differ")
+            return .failed(message: "パスワードが正しくありません")
         }
         return .ok(message: "ok")
     }

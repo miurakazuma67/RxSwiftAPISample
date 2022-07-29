@@ -10,11 +10,11 @@ import RxSwift
 import Firebase
 import FirebaseAuth
 
-protocol SignUpAPI {
+protocol SignUpRepositoryProtocol {
     func signUp(email: String, password: String, username: String) -> Observable<User>
 }
 
-final class SignUpDefaultAPI: SignUpAPI {
+final class SignUpRepository: SignUpRepositoryProtocol {
 
     func signUp(email: String, password: String, username: String) -> Observable<User> {
         return Observable<User>.create { observer in

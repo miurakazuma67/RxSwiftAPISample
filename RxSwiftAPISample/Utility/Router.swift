@@ -18,25 +18,33 @@ final class Router {
     static let shared = Router()
     private init() {}
 
-    private var window: UIWindow?
-
-    func showSignIn(from: UIViewController) {
-        let vc = SignUpViewController.makeFromStoryboard()
-        show(from: from, to: vc)
-    }
-
     func showBase(from: UIViewController) {
         let vc = BaseViewController.makeFromStoryboard()
         show(from: from, to: vc)
     }
 
-    func showChat(from: UIViewController) {
-        let vc = ChatViewController.makeFromStoryboard()
+//    func showChat(from: UIViewController) {
+//        let vc = ChatViewController.makeFromStoryboard()
+//        show(from: from, to: vc)
+//    }
+
+    func showSignUp(from: UIViewController) {
+        let vc = SignUpViewController.makeFromStoryboard()
+        show(from: from, to: vc)
+    }
+
+    func showReportList(from: UIViewController) {
+        let vc = ReportListViewController.makeFromStoryboard()
         show(from: from, to: vc)
     }
 
     func showTimer(from: UIViewController) {
         let vc = TimerViewController.makeFromStoryboard()
+        show(from: from, to: vc)
+    }
+
+    func showPost(from: UIViewController) {
+        let vc = PostViewController.makeFromStoryboard()
         show(from: from, to: vc)
     }
 

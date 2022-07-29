@@ -12,7 +12,8 @@ import JGProgressHUD
 import FirebaseAuthUI
 import FirebaseEmailAuthUI
 
-class SignUpViewController: UIViewController, ProgressHudEnable, ErrorAlertEnable {
+final class SignUpViewController: UIViewController, ProgressHudEnable, ErrorDialogEnable {
+
     @IBOutlet private weak var usernameTextField: UITextField!
     @IBOutlet private weak var usernameValidation: UILabel!
 
@@ -24,12 +25,12 @@ class SignUpViewController: UIViewController, ProgressHudEnable, ErrorAlertEnabl
     @IBOutlet private weak var passwordConfirmTextField: UITextField!
     @IBOutlet private weak var passwordConfirmValidation: UILabel!
 
-    @IBOutlet private weak var signUpButon: UIButton!
+    @IBOutlet private weak var signUpButton: UIButton!
     @IBOutlet private weak var signInUIButton: UIButton!
 
     let progressHud = JGProgressHUD(style: .dark)
 
-    var disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +46,9 @@ class SignUpViewController: UIViewController, ProgressHudEnable, ErrorAlertEnabl
                 username: usernameTextField.rx.text.orEmpty.asDriver(),
                 password: passwordTextField.rx.text.orEmpty.asDriver(),
                 passwordConfirm: passwordConfirmTextField.rx.text.orEmpty.asDriver(),
-                signUpTaps: signUpButon.rx.tap.asSignal()
+                signUpTaps: signUpButton.rx.tap.asSignal()
             ),
-            signUpAPI: SignUpDefaultAPI()
+            signUpAPI: SignUpRepository()
         )
 
         viewModel.emailValidation
@@ -68,8 +69,8 @@ class SignUpViewController: UIViewController, ProgressHudEnable, ErrorAlertEnabl
 
         viewModel.signUpEnabled
             .drive(onNext: { [weak self] valid  in
-                self?.signUpButon.isEnabled = valid
-                self?.signUpButon.alpha = valid ? 1.0 : 0.5
+                self?.signUpButton.isEnabled = valid
+                self?.signUpButton.alpha = valid ? 1.0 : 0.5
             })
             .disposed(by: disposeBag)
 
@@ -117,7 +118,7 @@ class SignUpViewController: UIViewController, ProgressHudEnable, ErrorAlertEnabl
     }
 }
 
-/// ログインはFirebaseUIを利用する
+/// ログインはFirebaseUIを使う
 extension SignUpViewController: FUIAuthDelegate {
     @objc func signInUIButtonTapped(any: UIControl) {
         guard let authUI = FUIAuth.defaultAuthUI() else { fatalError("FUIAuth i nil") }
@@ -133,7 +134,9 @@ extension SignUpViewController: FUIAuthDelegate {
 
     public func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
         if error == nil {
-            Router.shared.showBase(from: self)
+            let storyboard: UIStoryboard = UIStoryboard(name: "Base", bundle: nil)//遷移先のStoryboardを設定
+            let nextView = storyboard.instantiateViewController(withIdentifier: "Base") as! BaseViewController//遷移先のViewControllerを設定
+            self.navigationController?.pushViewController(nextView, animated: true)//遷移する
         }
     }
 }

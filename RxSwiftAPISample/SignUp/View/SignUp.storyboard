@@ -89,6 +89,7 @@
                             <constraint firstItem="kXl-Mr-jd3" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="FVc-X5-iqD"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Hzc-st-AaS"/>
                     <connections>
                         <outlet property="emailTextField" destination="pYd-ez-BDP" id="KFP-R9-Bet"/>
                         <outlet property="emailValidation" destination="eL6-aD-R2D" id="frF-7e-tQB"/>
@@ -97,14 +98,14 @@
                         <outlet property="passwordTextField" destination="x8k-23-nW4" id="gDO-Vy-lUy"/>
                         <outlet property="passwordValidation" destination="JNI-qT-LSt" id="0f9-yk-Ll3"/>
                         <outlet property="signInUIButton" destination="Y6B-OR-t4c" id="g2k-BP-PId"/>
-                        <outlet property="signUpButon" destination="aZc-At-V9r" id="yrd-OY-qwR"/>
+                        <outlet property="signUpButton" destination="aZc-At-V9r" id="yrd-OY-qwR"/>
                         <outlet property="usernameTextField" destination="xZr-pQ-dHx" id="glq-9e-0O1"/>
                         <outlet property="usernameValidation" destination="aJn-zo-ZeH" id="pyN-LV-2cS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="64"/>
+            <point key="canvasLocation" x="1839.1304347826087" y="63.616071428571423"/>
         </scene>
     </scenes>
     <resources>
