@@ -8,7 +8,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 import JGProgressHUD
-import RxKeyboard
 
  // 記録一覧を表示するtableView
 final class ReportListViewController: UIViewController, UITableViewDelegate, ProgressHudEnable, ErrorDialogEnable {

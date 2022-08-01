@@ -15,7 +15,6 @@ protocol PostRepositoryProtocol {
 
 final class PostRepository: PostRepositoryProtocol {
 
-    // オフラインの際にエラースローがされないので、オフライン時はエラーダイアログが表示できてない
     func post(time: String, message: String) -> Observable<DocumentReference> {
         return Observable<DocumentReference>.create { observer in
             guard let user = Auth.auth().currentUser else {
@@ -31,7 +30,7 @@ final class PostRepository: PostRepositoryProtocol {
             let db = Firestore.firestore()
             let message = Report(userId: userId, username:username,
                                  time: time, message: message, createdAt: date, updatedAt: date)
-            ref = db.collection("messages").addDocument(data: message.documentDictionary()) { error in
+            ref = db.collection("reports").addDocument(data: message.documentDictionary()) { error in
                 if let error = error {
                     observer.onError(error)
                 } else if let ref = ref {

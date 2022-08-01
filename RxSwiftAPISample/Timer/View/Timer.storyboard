@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,15 +26,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="JI6-hp-dmw">
-                                <rect key="frame" x="142" y="578" width="130" height="50"/>
+                                <rect key="frame" x="61" y="578" width="292.5" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="li0-wB-Xqm">
-                                        <rect key="frame" x="0.0" y="0.0" width="53" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="81.5" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="停止"/>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfT-FC-qMj">
+                                        <rect key="frame" x="105.5" y="0.0" width="81.5" height="50"/>
+                                        <color key="tintColor" red="0.87457496759999998" green="0.38684976929999998" blue="0.099452349940000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="リセット"/>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btk-te-K2R">
-                                        <rect key="frame" x="77" y="0.0" width="53" height="50"/>
+                                        <rect key="frame" x="211" y="0.0" width="81.5" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="開始"/>
                                     </button>
@@ -58,6 +64,7 @@
                     <tabBarItem key="tabBarItem" title="タイマー" image="timer" catalog="system" id="sJf-RN-Cgh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="resetButton" destination="RfT-FC-qMj" id="bTh-HX-Nmr"/>
                         <outlet property="startButton" destination="Btk-te-K2R" id="Mjm-0t-hKb"/>
                         <outlet property="stopButton" destination="li0-wB-Xqm" id="jBy-bV-Rnz"/>
                         <outlet property="timerLabel" destination="i4B-7S-v1w" id="6na-cF-eLS"/>

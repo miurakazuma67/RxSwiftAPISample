@@ -44,7 +44,6 @@ class ReportValidator {
         if message.isEmpty {
             return .empty(message: "")
         }
-        // TODO: このメッセージほんとに必要？
         return .ok(message: "Message acceptable")
     }
 }

@@ -29,9 +29,17 @@ final class PostViewController: UIViewController, ProgressHudEnable, ErrorDialog
     }
 
     private func setupUI() {
-        // textViewの枠線設定
         memoTextView.layer.borderColor = UIColor.systemGreen.cgColor
         memoTextView.layer.borderWidth = 1.0
+        timeTextField.addBorder(width: 1.0, color: UIColor.systemGreen, position: .bottom)
+        // 背景をタップしたらキーボードを隠す
+        let tapBackground = UITapGestureRecognizer()
+        tapBackground.rx.event
+            .subscribe(onNext: { [weak self] _ in
+                self?.view.endEditing(true)
+            })
+            .disposed(by: disposeBag)
+        view.addGestureRecognizer(tapBackground)
     }
 
     private func setupBinding() {
@@ -65,8 +73,6 @@ final class PostViewController: UIViewController, ProgressHudEnable, ErrorDialog
                 strongSelf.timeTextField.text = ""
                 strongSelf.timeTextField.sendActions(for: .valueChanged)
                 strongSelf.memoTextView.text = ""
-
-                Router.shared.showReportList(from: strongSelf)
             })
             .disposed(by: disposeBag)
 
@@ -79,14 +85,9 @@ final class PostViewController: UIViewController, ProgressHudEnable, ErrorDialog
             .drive( self.rx.showErrorAlert )
             .disposed(by: disposeBag)
     }
-
-    static func makeFromStoryboard() -> PostViewController {
-        UIStoryboard(name: "Post", bundle: nil).instantiateInitialViewController() as! PostViewController
-    }
 }
 
 extension PostViewController {
-// textFieldDElegateが必要かどうか
     private func createDatePicker() {
         datePicker.datePickerMode = .countDownTimer
         datePicker.locale = NSLocale(localeIdentifier: "ja_JP") as Locale

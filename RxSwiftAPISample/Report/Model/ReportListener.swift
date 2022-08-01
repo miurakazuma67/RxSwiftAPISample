@@ -23,9 +23,9 @@ class ReportDefaultListener: NSObject, ReportListener {
         return Observable<[Report]>.create { observer in
             let db = Firestore.firestore()
 
-            // get messages
+            // get reports
             self.listener = db
-                .collection("messages")
+                .collection("reports")
                 .order(by: "createdAt")
             // 変更を監視するメソッド
                 .addSnapshotListener { documentSnapshot, error in

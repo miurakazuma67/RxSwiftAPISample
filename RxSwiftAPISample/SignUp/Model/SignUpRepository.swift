@@ -15,7 +15,6 @@ protocol SignUpRepositoryProtocol {
 }
 
 final class SignUpRepository: SignUpRepositoryProtocol {
-
     func signUp(email: String, password: String, username: String) -> Observable<User> {
         return Observable<User>.create { observer in
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
