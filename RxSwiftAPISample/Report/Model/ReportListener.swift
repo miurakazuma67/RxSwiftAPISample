@@ -23,7 +23,7 @@ class ReportDefaultListener: NSObject, ReportListener {
         return Observable<[Report]>.create { observer in
             let db = Firestore.firestore()
 
-            // get reports
+            // データを取得
             self.listener = db
                 .collection("reports")
                 .order(by: "createdAt")

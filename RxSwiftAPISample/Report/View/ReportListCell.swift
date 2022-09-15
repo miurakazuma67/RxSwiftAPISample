@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReportListCell: UITableViewCell {
+final class ReportListCell: UITableViewCell {
 
     @IBOutlet private weak var timeLabel: UILabel!
     @IBOutlet private weak var memoLabel: UILabel!
